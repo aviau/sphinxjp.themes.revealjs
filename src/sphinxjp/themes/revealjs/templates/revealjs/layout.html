@@ -16,13 +16,13 @@ Master layout template for Sphinx themes.
 {# XXX necessary? #}
 {%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
 {%- if not embedded and docstitle %}
-{%- set titlesuffix = " &mdash; "|safe + docstitle|e %}
+{%- set titlesuffix = docstitle|e %}
 {%- else %}
 {%- set titlesuffix = "" %}
 {%- endif %}
 
 {%- macro script() %}
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="{{ pathto('_static/js/jquery.min.js', 1) }}"></script>
 <script src="{{ pathto('_static/lib/js/head.min.js', 1) }}"></script>
 <script src="{{ pathto('_static/js/reveal.js', 1) }}"></script>
 {%- endmacro %}
@@ -45,7 +45,7 @@ Master layout template for Sphinx themes.
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     {%- block htmltitle %}
-    <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+    <title>{{ titlesuffix }}</title>
     {%- endblock %}
 
     {{ metatags }}
