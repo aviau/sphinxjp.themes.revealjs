@@ -60,7 +60,7 @@ Master layout template for Sphinx themes.
 
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
     <script>
-      document.write('<link rel="stylesheet" href="{{ pathto('_static/css/print/', 1) }}' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+      document.write('<link rel="stylesheet" href="{{ pathto('_static/css/print/', 1) }}' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf.css" type="text/css"' : 'paper.css" type="text/css" media="print"' )  );
     </script>
 
     <!--[if lt IE 9]>
